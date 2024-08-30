@@ -9,11 +9,12 @@ export const camposGastosFederalizados = async () => {
     const browser = await puppeteer.launch({
         // headless: false,
         // slowMo: 100, // slow down by 250ms
-        // executablePath: '/usr/bin/chromium-browser' //inicializa  chromium-browser 
-        // executablePath: '/usr/bin/chromium' //inicializa  chromium-browser 
-        headless: true,
+        // executablePath: '/usr/bin/chromium-browser' //inicializa  chromium-browser solo funciona con ubuntu
+
+        // para debian o docker
+        headless: false,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        timeout: 0
+        // timeout: 0
     });
 
     const page = await browser.newPage();
