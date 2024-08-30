@@ -6,9 +6,10 @@ import { DatosService } from './datos/datos.service';
 import { EjemploModule } from './ejemplo/ejemplo.module';
 import { DatosGobiernoModule } from './datos-gobierno/datos-gobierno.module';
 import { ScrapingExamplesModule } from './scraping-examples/scraping-examples.module';
+import { GastosFederalizadosModule } from './gastos-federalizados/gastos-federalizados.module';
 
 @Module({
-  imports: [EjemploModule, DatosGobiernoModule, ScrapingExamplesModule],
+  imports: [EjemploModule, DatosGobiernoModule, ScrapingExamplesModule, GastosFederalizadosModule],
   controllers: [AppController, DatosController],
   providers: [AppService, DatosService],
 })
