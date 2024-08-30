@@ -12,7 +12,7 @@ export const camposGastosFederalizados = async () => {
         // executablePath: '/usr/bin/chromium-browser' //inicializa  chromium-browser solo funciona con ubuntu
 
         // para debian o docker
-        headless: false,
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
         // timeout: 0
     });
