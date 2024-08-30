@@ -13,6 +13,7 @@ export const camposGastosFederalizados = async () => {
         // executablePath: '/usr/bin/chromium' //inicializa  chromium-browser 
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        timeout: 0
     });
 
     const page = await browser.newPage();
