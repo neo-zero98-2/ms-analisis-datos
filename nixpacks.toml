@@ -1,8 +1,0 @@
-# nixpacks.toml
-
-[build]
-  # Define the build environment
-  commands = [
-    "apt-get update",
-    "apt-get install chromium-browser",
-  ]
