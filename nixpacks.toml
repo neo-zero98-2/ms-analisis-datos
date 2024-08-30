@@ -3,9 +3,6 @@
 [build]
   # Define the build environment
   commands = [
+    "apt-get update",
     "apt-get install chromium-browser",
   ]
-
-[app]
-  # Define the command to start your application
-  start = "npm start"
