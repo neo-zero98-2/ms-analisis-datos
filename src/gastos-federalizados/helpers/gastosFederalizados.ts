@@ -14,7 +14,6 @@ export const camposGastosFederalizados = async () => {
         // para debian o docker
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        // timeout: 0
     });
 
     const page = await browser.newPage();
@@ -55,7 +54,9 @@ export const camposGastosFederalizados = async () => {
                 },
                 {}
             )
-        }).filter((item: Table) => !item.Descarga.includes('.zip')); //quita los archivos .zip
+        })
+        .filter((item: Table) => item.Periodo  === 'Informe Definitivo')
+        .filter((item: Table) => !item.Descarga.includes('.zip')); //quita los archivos .zip
 
         return dataJson;
     });

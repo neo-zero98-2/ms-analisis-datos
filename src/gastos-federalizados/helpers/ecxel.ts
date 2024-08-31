@@ -17,7 +17,6 @@ export const downloadExcel = async (ecxelUrl:string) => {
         const response = await axios.get(ecxelUrl, { responseType: 'arraybuffer' });
 
         // Guardar el archivo Excel en el sistema de archivos
-        // const filePath = path.join('/home/neo/projects/diplomado/ms-scraping-analisis/', 'archivos/archivo.xlsx') //ruta de la carpeta
         const filePath = join(cwd(), "archivos", "sheetjs.xlsx") //ruta de la carpeta
         console.log("file ", filePath);
 
