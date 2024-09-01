@@ -34,7 +34,8 @@ export const downloadExcel = async (ecxelUrl:string) => {
 
         // Convertir la hoja a JSON
         const data = XLSX.utils.sheet_to_json(sheet, {header: 1});
-        const object = data.map( item => ({
+        const object = data.map( (item, index) => ({
+            id: index,
             año: item[0],
             entidad: item[2],
             municipio: item[3],
@@ -49,7 +50,6 @@ export const downloadExcel = async (ecxelUrl:string) => {
         }))
         console.log(data.length);
         
-        // console.log('Datos del archivo Excel:', data);
         return object;
     } catch (error) {
         console.error('Error al descargar el archivo Excel:', error.message);

@@ -55,8 +55,8 @@ export const camposGastosFederalizados = async () => {
                 {}
             )
         })
-        .filter((item: Table) => item.Periodo  === 'Informe Definitivo')
-        .filter((item: Table) => !item.Descarga.includes('.zip')); //quita los archivos .zip
+        .filter((item: Table) => (item.Periodo  === 'Informe Definitivo' && !item.Descarga.includes('.zip')))
+        .map((item: Table, index) => ({...item, id: index}));
 
         return dataJson;
     });
